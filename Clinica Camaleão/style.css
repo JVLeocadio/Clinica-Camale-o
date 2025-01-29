@@ -1,0 +1,370 @@
+/* Estilo básico do corpo e da página */
+body, html {
+  margin: 0; /* Remove a margem padrão */
+  padding: 0; /* Remove o padding padrão */
+  height: 100%; /* A altura da página ocupa 100% da tela */
+  font-family: Arial, sans-serif; /* Fonte usada no site */
+  scroll-behavior: smooth; /* Rolagem suave */
+}
+
+/* Menu de navegação */
+.navigation {
+  position: fixed; /* Fixa o menu no topo */
+  z-index: 1000; /* Coloca o menu acima de outros elementos */
+  top: 10px; /* Um pequeno espaço do topo */
+  width: 100%; /* Ocupa a largura inteira da página */
+  background: transparent; /* Fundo transparente */
+  display: flex; /* Alinha os itens do menu */
+  justify-content: center; /* Alinha ao centro */
+}
+
+/* Lista de links do menu */
+.navigation ul {
+  list-style: none; /* Remove os marcadores da lista */
+  display: flex; /* Exibe os itens da lista em linha */
+  padding: 0;
+  margin: 0;
+  gap: 50px; /* Espaço entre os links */
+}
+
+/* Estilo dos links */
+.navigation a {
+  color: #02ABD2; /* Cor do texto */
+  text-decoration: none; /* Remove o sublinhado dos links */
+  font-size: 25px; /* Tamanho da fonte */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra do texto */
+  padding: 10px 15px; /* Espaçamento interno dos links */
+  border-radius: 15px; /* Cantos arredondados */
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; /* Transições suaves */
+}
+
+/* Efeito de hover nos links */
+.navigation a:hover {
+  transform: scale(1.2); /* Aumenta o tamanho do link */
+  background-color: #90C99A; /* Muda a cor de fundo */
+  color: #02ABD2; /* Muda a cor do texto */
+}
+
+/* Header */
+#header {
+  position: relative; /* Permite o posicionamento de elementos dentro */
+  height: 100vh; /* O header ocupa a altura inteira da tela */
+  background-image: url('/assets/img/extracted_frame.jpg'); /* Imagem de fundo */
+  background-size: cover; /* Faz a imagem cobrir toda a área */
+  background-repeat: no-repeat; /* Não repete a imagem */
+  background-position: center; /* Centraliza a imagem */
+  display: flex; /* Usado para centralizar os itens dentro */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+  overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites */
+  transition: background-position 0.1s ease; /* Transição suave para o movimento do fundo */
+}
+
+/* Estilo do título e imagem na home */
+.home {
+  display: flex;
+  flex-direction: column; /* Alinha o título e imagem verticalmente */
+  z-index: 1; /* Garante que o conteúdo fique acima da imagem */
+  text-align: center; /* Centraliza o texto */
+}
+
+.home h1 {
+  font-size: 3rem; /* Tamanho do título */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra do texto */
+  margin: 0; /* Remove a margem do título */
+  padding: 20px; /* Espaçamento interno */
+  color: #02ABD2; /* Cor do texto */
+}
+
+/* Estilo da imagem do camaleão */
+#img {
+  border-radius: 190px; /* Torna a imagem redonda */
+  width: 400px; /* Largura da imagem */
+  height: auto; /* Altura automática */
+  cursor: pointer; /* Cursor de mão ao passar sobre a imagem */
+  transition: transform 0.3s ease; /* Transição suave na rotação */
+}
+
+#img:active {
+  cursor: grabbing; /* Mudança no cursor ao clicar */
+}
+
+/* Efeitos nas seções com fundo parallax */
+.content {
+  height: 100vh; /* Cada seção ocupa 100% da altura da tela */
+  display: flex; /* Alinha os itens dentro */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+  text-align: center; /* Centraliza o texto */
+  padding: 20px; /* Espaçamento interno */
+  color: #333; /* Cor do texto */
+}
+
+/* Fundo parallax */
+.parallax {
+  background-attachment: fixed; /* O fundo não se move quando rola a página */
+  background-size: cover; /* Faz o fundo cobrir toda a seção */
+  background-repeat: no-repeat; /* Não repete a imagem */
+  background-position: center; /* Centraliza a imagem */
+}
+
+/* Fundo das seções específicas */
+#sobre {
+  background-image: url('https://www.pge.ms.gov.br/wp-content/uploads/2019/07/quem_somos_site-2.png');
+}
+
+#profissionais {
+  background-image: url('https://th.bing.com/th/id/OIP.L9C1m0EH0VB6ckLqbwUysgHaE8?rs=1&pid=ImgDetMain');
+}
+
+#servicos {
+  background-image: url('https://i0.wp.com/gestaodesegurancaprivada.com.br/wp-content/uploads/servicos.jpg?fit=1280%2C720&ssl=1');
+}
+
+#agendamento {
+  background-image: url('https://th.bing.com/th/id/R.404d5024347491b15c4d2fa81248fc74?rik=HL6ILKRuRgzrgg&pid=ImgRaw&r=0');
+}
+
+#contatos {
+  background-image: url('https://th.bing.com/th/id/OIP.tZuQ0_lRO85jAch0IP8MrQHaEj?rs=1&pid=ImgDetMain');
+}
+
+/* Rodapé */
+footer {
+  background: #444; /* Cor do fundo */
+  color: white; /* Cor do texto */
+  height: 100px; /* Altura do rodapé */
+  display: flex; /* Centraliza o conteúdo */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+}
+
+
+
+
+
+
+
+
+
+
+/* Contêiner principal (mantém padding fixo) */
+.agendamento-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 40px; /* Padding fixo e consistente */
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width:  900px;
+  margin: 100px auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Observações */
+.observacoes {
+  grid-column: span 2; /* Ocupa toda a largura do formulário */
+  margin-top: 20px;
+}
+
+.observacoes textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: none;
+  box-sizing: border-box;
+  display: flex; /* Alinha os itens em linha */
+}
+
+
+/* Detalhes do cliente */
+.detalhes-cliente {
+  grid-column: span 2;
+  display: flex; /* Alinha os itens em linha */
+  align-items: center; /* Centraliza verticalmente os itens */
+  justify-content: space-between; /* Mantém espaçamento proporcional dentro do cabeçalho */
+  background-color: #00274d; /* Cor de fundo azul */
+  color: white; /* Cor do texto */
+  padding: 15px 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-sizing: border-box; /* Inclui padding no tamanho do contêiner */
+}
+
+
+
+.detalhes-cliente img {
+  width: 150px; /* Tamanho da imagem */
+  height: 150px; /* Tamanho da imagem */
+  object-fit: cover; /* Ajusta a imagem ao espaço */
+  margin-left: 20px;
+  border-radius: 6px;
+}
+
+.texto-cliente {
+  text-align: center; /* Centraliza o texto no eixo horizontal */
+  flex-grow: 1; /* Faz o texto ocupar o espaço restante */
+  margin-left: 15px; /* Espaçamento entre a imagem e o texto */
+}
+
+
+.texto-cliente h3 {
+  margin: 0; /* Remove margens */
+  font-size: 18px; /* Tamanho do nome */
+  font-weight: bold; /* Negrito */
+}
+.texto-cliente p {
+  margin: 0; /* Remove margens */
+  font-size: 14px; /* Tamanho do texto da especialidade */
+  color: #90caf9; /* Cor do texto secundário */
+}
+
+.texto-cliente {margin-right: 100px;
+}
+
+/* Calendário e horários */
+.calendario-horarios {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas: calendário e horários */
+  gap: 20px;
+}
+
+.calendario {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.horarios {
+  text-align: center;
+}
+
+.horarios h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Área de horários */
+.horarios-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+  border: 1px solid #ccc; /* Para visualização */
+  border-radius: 8px; /* Bordas arredondadas */
+  background-color: #f9f9f9; /* Fundo claro */
+}
+
+/* Mensagem quando não há horários disponíveis */
+.horarios-lista .horario-indisponivel {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ocupa toda a altura fixa */
+}
+
+/* Horários disponíveis */
+.horarios-lista .horario-item {
+  padding: 15px 20px;
+  background-color: #e0f7fa;
+  border: 2px solid #00acc1;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.horarios-lista .horario-item:hover {
+  background-color: #00acc1;
+  color: white;
+  transform: scale(1.1);
+}
+
+.horarios-lista .horario-item.selecionado {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #388e3c;
+}
+
+/* Botão de Agendar - Desativado */
+.btn-agendar {
+  grid-column: span 2;
+  background-color: #ccc; /* Cor escura (desativado) */
+  color: #ffffff;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: not-allowed; /* Cursor indica que está desativado */
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, cursor 0.3s ease;
+}
+
+/* Botão de Agendar - Ativado */
+.btn-agendar:enabled {
+  background-color: #4caf50; /* Cor verde quando habilitado */
+  cursor: pointer;
+}
+
+.btn-agendar:enabled:hover {
+  background-color: #45a049; /* Cor mais escura ao passar o mouse */
+}
+
+.btn-agendar:enabled:hover {
+  background-color: #45a049;
+}
+/* Formulário */
+.form-container {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Espaçamento uniforme entre os campos */
+  align-items: center; /* Centraliza verticalmente os itens */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* Alinha label e input em uma coluna */
+  gap: 5px; /* Espaçamento entre label e input */
+}
+
+.form-group label {
+  font-size: 16px;
+  color: #333;
+}
+
+.form-group input, .form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* Responsividade */
+@media (max-width: 768px) {
+  .agendamento-container {
+      grid-template-columns: 1fr; /* Apenas uma coluna em telas menores */
+  }
+
+  .form-container {
+      grid-template-columns: 1fr; /* Campos em linha única */
+  }
+
+  .observacoes textarea {
+      height: auto; /* Ajusta dinamicamente a altura */
+  }
+}
+
+
+
+

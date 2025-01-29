@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Definindo a língua como português -->
+<head>
+    <meta charset="UTF-8"> <!-- Definindo a codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade para dispositivos móveis -->
+    <title>Clínica de Terapia Ocupacional</title> <!-- Título que aparece na aba do navegador -->
+    <!-- Link para o arquivo de estilo CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Scripts externos para funcionalidades -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Biblioteca jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> <!-- Efeito de transição suave -->
+    <script src="index.js" defer></script> <!-- Script local (index.js) -->
+    <!-- Estilo do Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Script do Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="slider.css">
+   
+
+
+</head>
+<body>
+    <div id="scroll-animate"> <!-- Div principal para rolagem animada -->
+        <!-- Cabeçalho -->
+        <header id="header">
+            <nav class="navigation"> <!-- Menu de navegação -->
+                <ul> <!-- Lista de links -->
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#agendamento">Agendamento</a></li>
+                    <li><a href="#contatos">Contatos</a></li>
+                </ul>
+            </nav>
+        
+            <div class="home"> <!-- Seção inicial com o nome da clínica -->
+                <h1>Clinica Camaleão</h1> <!-- Nome da clínica -->
+                <img id="img" src="/assets/img/imagem-camaleao-logo.jpg" alt="Imagem do Camaleão"> <!-- Imagem do logotipo -->
+            </div>
+        </header>
+
+      <!-- Seção SOBRE -->
+<section  id="sobre">
+    
+    <div id="slider-container"></div> <!-- Aqui o slider será inserido -->
+</section>
+
+<!-- Scripts adicionais -->
+<script src="slider.js" defer></script>
+<link rel="stylesheet" href="slider.css">
+
+
+
+
+
+
+
+        <section class="content parallax" id="agendamento">
+            
+           
+            <section id="calendario-agendamento">
+                <div class="agendamento-container">
+                    <!-- Detalhes do Cliente -->
+                    <div class="detalhes-cliente">
+                        <img id="cliente-imagem" src="/assets/img/t.o.png" alt="Foto do profissional">
+                        <div class="texto-cliente">
+                            <h3 id="cliente-nome">Carol Garcia</h3>
+                            <p id="cliente-especialidade">Terapeuta Ocupacional</p>
+                        </div>
+                    </div>
+                    <!-- Calendário e Horários -->
+                    <div class="calendario-horarios">
+                        <div class="calendario">
+                            <h4>Escolha uma data*</h4>
+                            <div id="calendario"></div> <!-- Contêiner do calendário -->
+                        </div>
+            
+                        <div class="horarios">
+                            <h4>Horários disponíveis</h4>
+                            <div id="lista-horarios" class="horarios-lista"></div>
+                        </div>
+                    </div>
+            
+                    <!-- Campos do formulário -->
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label for="especialidade">Especialidade:</label>
+                            <select id="especialidade" required>
+                                <option value="" disabled selected>Selecione uma especialidade</option>
+                                <option value="terapia_ocupacional">Terapeuta Ocupacional</option>
+                                <option value="fonoaudiologia">Fonoaudiologia</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" placeholder="Nome Completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" id="telefone" placeholder="(XX) 99999-9999" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" placeholder="email@dominio.com" required>
+                        </div>
+                    </div>
+            
+                    <!-- Campo de Observações -->
+                    <div class="observacoes">
+                        <h4>Observações</h4>
+                        <textarea id="observacoes" placeholder="Digite aqui informações adicionais..."></textarea>
+                    </div>
+            
+                    <!-- Botão de Agendar -->
+                    <button id="confirmar" class="btn-agendar" disabled>Agendar</button>
+                </div>
+            </section>
+        
+        </section>
+
+        <section class="content parallax" id="contatos">
+            <h1>Entre em Contato</h1>
+            <p>Email: contato@clinicaocupacional.com<br>Telefone: (11) 1234-5678</p>
+        </section>
+
+        <!-- Rodapé -->
+        <footer>
+            <h1>Footer</h1>
+        </footer>
+    </div>
+</body>
+</html>
