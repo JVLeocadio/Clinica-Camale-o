@@ -176,6 +176,9 @@ $(document).ready(function () {
 
 
 
+
+
+
 $(document).ready(function () {
     $("#slider-container").load("page/slider.html .slideshow", function () {
         console.log("Slider carregado com sucesso!");
@@ -213,3 +216,75 @@ $(document).ready(function () {
 
 
 
+
+// Seleção dos elementos
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const cards = document.querySelectorAll('.profissional-card');
+
+// Inicializar qual card está visível
+let currentCardIndex = 0; // O primeiro card é o visível inicialmente
+
+// Função para animar e alternar entre os cards
+function switchCard(direction) {
+    const currentCard = cards[currentCardIndex];
+
+    // Se estivermos indo para o próximo card
+    if (direction === 'next') {
+        // Aplicar a animação de rotação e saída no card atual
+        currentCard.style.transform = 'rotateY(-180deg) scale(0.8)'; // Gira e diminui o card
+        currentCard.style.opacity = '0'; // Torna o card invisível
+
+        // Aguardar o tempo da animação
+        setTimeout(() => {
+            // Remover a classe is-current do card atual
+            currentCard.classList.remove('is-current');
+
+            // Mudar o índice do card
+            currentCardIndex = (currentCardIndex + 1) % cards.length;
+
+            // Adicionar a classe is-current ao próximo card
+            const nextCard = cards[currentCardIndex];
+            nextCard.classList.add('is-current'); // Torna o próximo card visível
+            nextCard.style.transform = 'rotateY(180deg) scale(0.8)'; // Inicia fora da tela com rotação
+            nextCard.style.opacity = '1'; // Torna o card visível
+
+            // Iniciar a animação de entrada do próximo card
+            setTimeout(() => {
+                nextCard.style.transform = 'rotateY(0deg) scale(1)'; // Finaliza a animação do próximo card
+            }, 10); // Pequeno delay para iniciar a animação
+        }, 800); // Espera o tempo da animação do card atual (800ms)
+    }
+
+    // Se estivermos indo para o card anterior
+    if (direction === 'prev') {
+        // Aplicar a animação de rotação e saída no card atual
+        currentCard.style.transform = 'rotateY(180deg) scale(0.8)'; // Gira e diminui o card
+        currentCard.style.opacity = '0'; // Torna o card invisível
+
+        // Aguardar o tempo da animação
+        setTimeout(() => {
+            // Remover a classe is-current do card atual
+            currentCard.classList.remove('is-current');
+
+            // Mudar o índice do card
+            currentCardIndex = (currentCardIndex - 2 + cards.length) % cards.length;
+
+            // Adicionar a classe is-current ao card anterior
+            const prevCard = cards[currentCardIndex];
+            prevCard.classList.add('is-current'); // Torna o card visível
+            prevCard.style.transform = 'rotateY(-180deg) scale(0.8)'; // Inicia fora da tela com rotação
+            prevCard.style.opacity = '1'; // Torna o card visível
+
+            // Iniciar a animação de entrada do card anterior
+            setTimeout(() => {
+                prevCard.style.transform = 'rotateY(0deg) scale(1)'; // Finaliza a animação do próximo card
+            }, 10); // Pequeno delay para iniciar a animação
+        }, 800); // Espera o tempo da animação do card atual (800ms)
+    }
+}
+
+
+// Adicionar eventos de clique nos botões
+prevBtn.addEventListener('click', () => switchCard('prev'));
+nextBtn.addEventListener('click', () => switchCard('next'));
