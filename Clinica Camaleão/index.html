@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br"> <!-- Definindo a língua como português -->
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8"> <!-- Definindo a codificação de caracteres -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade para dispositivos móveis -->
-    <title>Clínica de Terapia Ocupacional</title> <!-- Título que aparece na aba do navegador -->
-    <!-- Link para o arquivo de estilo CSS -->
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Clínica de Terapia Ocupacional</title>
+    <link rel="stylesheet" href="/style/style.css">
     <!-- Scripts externos para funcionalidades -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Biblioteca jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> <!-- Efeito de transição suave -->
-    <script src="index.js" defer></script> <!-- Script local (index.js) -->
-    <!-- Estilo do Flatpickr -->
+    <script src="/src/index.js" defer></script> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <!-- Script do Flatpickr -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <link rel="stylesheet" href="slider.css">
-   
+    <link rel="stylesheet" href="/style/slider.css">
+    <script src="/src/slider.js" defer></script>
 
 
 </head>
@@ -27,6 +24,7 @@
                 <ul> <!-- Lista de links -->
                     <li><a href="#header">Home</a></li>
                     <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#Profissionais">Profissionais</a></li>
                     <li><a href="#agendamento">Agendamento</a></li>
                     <li><a href="#contatos">Contatos</a></li>
                 </ul>
@@ -45,10 +43,15 @@
 </section>
 
 <!-- Scripts adicionais -->
-<script src="slider.js" defer></script>
-<link rel="stylesheet" href="slider.css">
+<script src="/src/slider.js" defer></script>
+<link rel="stylesheet" href="/style/slider.css">
 
 
+
+
+<section class="content parallax" id="Profissionais">
+    
+</section>
 
 
 
@@ -118,6 +121,12 @@
         
         </section>
 
+
+
+
+
+
+
         <section class="content parallax" id="contatos">
             <h1>Entre em Contato</h1>
             <p>Email: contato@clinicaocupacional.com<br>Telefone: (11) 1234-5678</p>
@@ -128,5 +137,8 @@
             <h1>Footer</h1>
         </footer>
     </div>
+
+
+    <script src="/src/index.js" defer></script>
 </body>
 </html>

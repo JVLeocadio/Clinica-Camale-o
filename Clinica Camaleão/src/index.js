@@ -62,6 +62,16 @@ $(document).ready(function () {
         isPaused = false; // Retoma o movimento
     });
 
+
+
+
+
+
+
+
+
+
+
     // Simulação de horários
     const horariosSimulados = {
         "2025-01-25": ["09:00", "10:30", "13:00", "15:30","16:30","17:30","18:30","19:30","20:00","20:30","21:30","22:00","23:00"], // Data com horários
@@ -167,11 +177,11 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-    $("#slider-container").load("slider.html .slideshow", function () {
+    $("#slider-container").load("page/slider.html .slideshow", function () {
         console.log("Slider carregado com sucesso!");
 
         // Reexecuta o script do slider após o carregamento dinâmico
-        $.getScript("slider.js", function () {
+        $.getScript("src/slider.js", function () {
             console.log("Script do slider carregado novamente!");
 
             // Aguarda um pequeno tempo para garantir que tudo seja carregado corretamente
@@ -201,62 +211,5 @@ $(document).ready(function () {
 
 
 
-$(document).ready(function () {
-    // Efeito parallax para a imagem de fundo do vídeo
-    function addParallaxEffectToSliderBackground(sliderBackground) {
-        if (sliderBackground) {
-            sliderBackground.addEventListener("mousemove", (e) => {
-                const { left, top, width, height } = sliderBackground.getBoundingClientRect();
-                const x = (e.clientX - left) / width - 0.5; // Movimento horizontal
-                const y = (e.clientY - top) / height - 0.5; // Movimento vertical
 
-                // Aplica o movimento parallax na imagem de fundo
-                sliderBackground.style.transform = `translateX(${x * 30}px) translateY(${y * 30}px)`;
-            });
-
-            sliderBackground.addEventListener("mouseleave", () => {
-                // Restaura a posição da imagem quando o mouse sai
-                sliderBackground.style.transform = "translateX(0px) translateY(0px)";
-            });
-        }
-    }
-
-    // Quando o slide estiver ativo, aplica o efeito parallax à imagem de fundo
-    function checkActiveSlide() {
-        $(".js-slider-home-slide").each(function () {
-            if ($(this).hasClass("is-current")) {
-                const sliderBackground = $(this).find("#slider-background")[0]; // A imagem de fundo do slide
-                addParallaxEffectToSliderBackground(sliderBackground);
-            } else {
-                // Remove o parallax se o slide não for o ativo
-                $(this).find("#slider-background").css("transform", "translateX(0px) translateY(0px)");
-            }
-        });
-    }
-
-    // Inicializa o efeito no carregamento da página
-    checkActiveSlide();
-
-    // Sempre que um novo slide for ativado, reexecuta os efeitos e pausa o vídeo
-    $(document).on("click", ".js-slider-home-next, .js-slider-home-prev", function () {
-        setTimeout(() => {
-            checkActiveSlide();
-            pauseVideoOnSlideChange();
-        }, 500);
-    });
-
-    // Função para pausar o vídeo ao trocar de slide
-    function pauseVideoOnSlideChange() {
-        $(".js-slider-home-slide").each(function () {
-            if (!$(this).hasClass("is-current")) {
-                const iframe = $(this).find("iframe");
-                if (iframe.length) {
-                    const videoSrc = iframe.attr("src");
-                    iframe.attr("src", ""); // Remove o src para pausar o vídeo
-                    iframe.attr("src", videoSrc); // Restaura o src original
-                }
-            }
-        });
-    }
-});
 
